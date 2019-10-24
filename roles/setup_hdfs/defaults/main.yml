@@ -1,0 +1,46 @@
+---
+hadoop_yum_repository_url: http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.3.0
+hadoop_yum_repository_gpgkey_url: http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.3.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+hadoop_yum_packages:
+  - hadoop
+  - hadoop-hdfs
+  - hadoop-libhdfs
+  - hadoop-yarn
+  - hadoop-mapreduce
+  - hadoop-client
+  - openssl
+
+hadoop_hdfs_base_dir: /hadoop/hdfs
+hadoop_hdfs_namenode_dir: "{{ hadoop_hdfs_base_dir }}/nn"
+hadoop_hdfs_secondary_namenode_dir: "{{ hadoop_hdfs_base_dir }}/snn"
+hadoop_hdfs_datanode_dir: "{{ hadoop_hdfs_base_dir }}/dn"
+hadoop_hdfs_log_dir: /var/log/hadoop/hdfs
+hadoop_hdfs_pid_dir: /var/run/hadoop/hdfs
+
+hadoop_yarn_base_dir: /hadoop/yarn
+hadoop_yarn_local_dir: "{{ hadoop_yarn_base_dir }}/local"
+hadoop_yarn_local_log_dir: "{{ hadoop_hdfs_base_dir }}/logs"
+hadoop_yarn_log_dir: /var/log/hadoop/yarn
+hadoop_yarn_pid_dir: /var/run/hadoop/yarn
+
+hadoop_conf_dir: /etc/hadoop/conf
+
+# FIXME
+hadoop_hdp_version: 2
+
+hadoop_hdfs_replication: 3
+
+
+hadoop_sysctl_entries:
+  # max receive socket buffer (bytes)
+  net.core.rmem_max: 268435456
+  # max send socket buffer (bytes)
+  net.core.wmem_max: 268435456
+  # default receive socket buffer (bytes)
+  net.core.rmem_default: 67108864
+  # default send socket buffer (bytes)
+  net.core.wmem_default: 67108864
+  # max number of incoming connections
+  net.core.somaxconn: 65535
+  # reuse sockets in TIME_WAIT state
+  net.ipv4.tcp_tw_reuse: 1

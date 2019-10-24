@@ -1,0 +1,114 @@
+---
+- name: Configure hadoop repository
+  yum_repository:
+    name: hdp
+    description: HDP repository
+    baseurl: "{{ hadoop_yum_repository_url }}"
+    gpgkey: "{{ hadoop_yum_repository_gpgkey_url }}"
+
+- name: Install hadoop packages
+  yum:
+    name: "{{ hadoop_yum_packages }}"
+
+- name: Create hadoop hdfs namenode directory
+  file:
+    path: "{{ hadoop_hdfs_namenode_dir }}"
+    state: directory
+    owner: hdfs
+    group: hadoop
+    mode: "0755"
+
+- name: Create hadoop hdfs secondary namenode directory
+  file:
+    path: "{{ hadoop_hdfs_secondary_namenode_dir }}"
+    state: directory
+    owner: hdfs
+    group: hadoop
+    mode: "0750"
+
+- name: Create hadoop hdfs datanode directory
+  file:
+    path: "{{ hadoop_hdfs_datanode_dir }}"
+    state: directory
+    owner: hdfs
+    group: hadoop
+    mode: "0755"
+
+- name: Create hadoop yarn local directory
+  file:
+    path: "{{ hadoop_yarn_local_dir }}"
+    state: directory
+    owner: yarn
+    group: hadoop
+    mode: "0755"
+
+- name: Create hadoop yarn local log directory
+  file:
+    path: "{{ hadoop_yarn_local_log_dir }}"
+    state: directory
+    owner: yarn
+    group: hadoop
+    mode: "0755"
+
+- name: Create hadoop hdfs log dir
+  file:
+      path: "{{ hadoop_hdfs_log_dir }}"
+      state: directory
+      owner: hdfs
+      group: hadoop
+      mode: "0755"
+
+- name: Create hadoop yarn log dir
+  file:
+      path: "{{ hadoop_yarn_log_dir }}"
+      state: directory
+      owner: yarn
+      group: hadoop
+      mode: "0755"
+
+- name: Create hadoop hdfs pid dir
+  file:
+      path: "{{ hadoop_hdfs_pid_dir }}"
+      state: directory
+      owner: hdfs
+      group: hadoop
+      mode: "0755"
+
+- name: Create hadoop yarn pid dir
+  file:
+      path: "{{ hadoop_yarn_pid_dir }}"
+      state: directory
+      owner: yarn
+      group: hadoop
+      mode: "0755"
+
+- name: Create hadoop configuration dir
+  file:
+    path: "{{ hadoop_conf_dir }}"
+    state: directory
+    owner: hdfs
+    group: hadoop
+    mode: "0755"
+
+- name: Configure hadoop files
+  template:
+    src: "{{ item }}.xml.j2"
+    dest: "{{ hadoop_conf_dir }}/{{ item }}.xml"
+  with_items:
+    - core-site
+    - hdfs-site
+    - yarn-site
+
+- name: Install hadoop configuration files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ hadoop_conf_dir }}/{{ item }}"
+  with_items:
+    - hadoop-env.sh
+
+- name: Set sysctl tuning
+  sysctl:
+    sysctl_file: "/etc/sysctl.d/hdfs.conf"
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+  with_dict: "{{ hadoop_sysctl_entries }}"

@@ -1,0 +1,18 @@
+all:
+  hosts:
+    ovh-4:
+      ansible_host: ovh-4
+    ovh-5:
+      ansible_host: ovh-5
+    ovh-6:
+      ansible_host: ovh-6
+  children:
+    hdfs:
+      hosts:
+        ovh-4: {}
+        ovh-5: {}
+        ovh-6: {}
+      vars:
+        hadoop_hdfs_namenode_hostname: ovh-6
+        hadoop_hdfs_secondary_namenode_hostname: ovh-6
+        hadoop_yarn_resourcemanager_hostname: ovh-6

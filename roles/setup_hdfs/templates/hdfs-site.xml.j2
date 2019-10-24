@@ -1,0 +1,48 @@
+<configuration>
+
+    <property>
+	<name>dfs.namenode.name.dir</name>
+	<value>{{ hadoop_hdfs_namenode_dir }}</value>
+	</property>
+
+	<property>
+	<name>dfs.datanode.data.dir</name>
+	<value>{{ hadoop_hdfs_datanode_dir }}</value>
+	</property>
+
+	<property>
+	<name>dfs.namenode.http-address</name>
+	<value>{{ hadoop_hdfs_namenode_hostname }}:50070</value>
+	</property>
+
+	<property>
+	<name>dfs.namenode.secondary.http-address</name>
+	<value>{{ hadoop_hdfs_secondary_namenode_hostname }}:50090</value>
+	</property>
+
+	<property>
+	<name>dfs.namenode.checkpoint.dir</name>
+	<value>{{ hadoop_hdfs_secondary_namenode_dir }}</value>
+	</property>
+
+	<property>
+	<name>dfs.namenode.checkpoint.edits.dir</name>
+	<value>{{ hadoop_hdfs_secondary_namenode_dir }}</value>
+	</property>
+
+	<property>
+	<name>dfs.namenode.rpc-address</name>
+	<value>{{ hadoop_hdfs_namenode_hostname }}:8020</value>
+	</property>
+
+	<property>
+	<name>dfs.namenode.https-address</name>
+	<value>{{ hadoop_hdfs_namenode_hostname }}:50470</value>
+	</property>
+
+	<property>
+	<name>dfs.replication</name>
+	<value>{{ hadoop_hdfs_replication }}</value>
+	</property>
+
+</configuration>

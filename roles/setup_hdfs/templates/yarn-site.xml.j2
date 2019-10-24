@@ -1,0 +1,33 @@
+<configuration>
+
+    <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>{{ hadoop_yarn_resourcemanager_hostname }}:8025</value>
+    </property>
+
+    <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>{{ hadoop_yarn_resourcemanager_hostname }}:8030</value>
+    </property>
+
+    <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>{{ hadoop_yarn_resourcemanager_hostname }}:8050</value>
+    </property>
+
+    <property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>{{ hadoop_yarn_resourcemanager_hostname }}:8141</value>
+    </property>
+
+    <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>{{ hadoop_yarn_local_dir }}</value>
+    </property>
+
+    <property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>{{ hadoop_yarn_local_log_dir }}</value>
+    </property>
+
+</configuration>

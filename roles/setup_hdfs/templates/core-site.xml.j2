@@ -1,0 +1,13 @@
+<configuration>
+
+    <property>
+	<name>fs.default.name</name>
+	<value>hdfs://{{ hadoop_hdfs_namenode_hostname }}:8020</value>
+	</property>
+
+    <property>
+	<name>hdp.version</name>
+	<value>{{ hadoop_hdp_version }}</value>
+	</property>
+
+</configuration>
