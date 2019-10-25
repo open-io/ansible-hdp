@@ -16,7 +16,7 @@
 # * limitations under the License.
 # */
 
-export HADOOP_YARN_HOME=/usr/lib/hadoop-yarn
+export HADOOP_YARN_HOME=/usr/hdp/current/hadoop-yarn-resourcemanager/
 export YARN_LOG_DIR=/var/log/hadoop-yarn/$USER
 export YARN_PID_DIR=/var/run/hadoop-yarn/$USER
 export HADOOP_LIBEXEC_DIR=/usr/lib/hadoop/libexec
@@ -26,7 +26,7 @@ export JAVA_HOME=/usr/java/default
 export HADOOP_YARN_USER=${HADOOP_YARN_USER:-yarn}
 
 # resolve links - $0 may be a softlink
-export YARN_CONF_DIR="${YARN_CONF_DIR:-$HADOOP_YARN_HOME/conf}"
+export YARN_CONF_DIR="${YARN_CONF_DIR:-/etc/hadoop/conf}"
 
 # some Java parameters
 # export JAVA_HOME=/home/y/libexec/jdk1.6.0/
