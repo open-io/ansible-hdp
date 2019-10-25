@@ -9,6 +9,7 @@ hadoop_yum_packages:
   - hadoop-mapreduce
   - hadoop-client
   - openssl
+  - java-1.8.0-openjdk-headless
 
 hadoop_hdfs_base_dir: /hadoop/hdfs
 hadoop_hdfs_namenode_dir: "{{ hadoop_hdfs_base_dir }}/nn"
