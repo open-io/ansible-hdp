@@ -30,4 +30,14 @@
     <value>{{ hadoop_yarn_local_log_dir }}</value>
     </property>
 
+    <property>
+    <name>yarn.log.server.url</name>
+    <value>http://{{ hadoop_yarn_resourcemanager_hostname }}:19888/jobhistory/logs/</value>
+    </property>
+
+    <property>
+    <name>yarn.resourcemanager.scheduler.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+    </property>
+
 </configuration>
