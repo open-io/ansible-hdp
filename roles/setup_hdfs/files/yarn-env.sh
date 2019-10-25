@@ -17,8 +17,8 @@
 # */
 
 export HADOOP_YARN_HOME=/usr/hdp/current/hadoop-yarn-resourcemanager/
-export YARN_LOG_DIR=/var/log/hadoop-yarn/$USER
-export YARN_PID_DIR=/var/run/hadoop-yarn/$USER
+export YARN_LOG_DIR=/var/log/hadoop/yarn/$USER
+export YARN_PID_DIR=/var/run/hadoop/yarn/$USER
 export HADOOP_LIBEXEC_DIR=/usr/lib/hadoop/libexec
 export JAVA_HOME=/usr/java/default
 
