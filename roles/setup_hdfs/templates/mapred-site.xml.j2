@@ -36,4 +36,34 @@
     <value>$PWD/mr-framework/hadoop/share/hadoop/mapreduce/*:$PWD/mr-framework/hadoop/share/hadoop/mapreduce/lib/*:$PWD/mr-framework/hadoop/share/hadoop/common/*:$PWD/mr-framework/hadoop/share/hadoop/common/lib/*:$PWD/mr-framework/hadoop/share/hadoop/yarn/*:$PWD/mr-framework/hadoop/share/hadoop/yarn/lib/*:$PWD/mr-framework/hadoop/share/hadoop/hdfs/*:$PWD/mr-framework/hadoop/share/hadoop/hdfs/lib/*:/usr/hdp/${hdp.version}/hadoop/lib/hadoop-lzo-0.6.0.${hdp.version}.jar:/etc/hadoop/conf/secure</value>
     </property>
 
+    <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>{{ hadoop_mapreduce_map_memory_mb }}</value>
+    </property>
+
+    <property>
+    <name>mapreduce.map.java.opts</name>
+    <value>{{ hadoop_mapreduce_map_java_opts }}</value>
+    </property>
+
+    <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>{{ hadoop_mapreduce_reduce_memory_mb }}</value>
+    </property>
+
+    <property>
+    <name>mapreduce.reduce.java.opts</name>
+    <value>{{ hadoop_mapreduce_reduce_java_opts }}</value>
+    </property>
+
+    <property>
+    <name>yarn.app.mapreduce.am.resource.mb</name>
+    <value>{{ hadoop_yarn_app_mapreduce_am_resource_mb }}</value>
+    </property>
+
+    <property>
+    <name>yarn.app.mapreduce.am.command-opts</name>
+    <value>{{ hadoop_yarn_app_mapreduce_am_command_opts }}</value>
+    </property>
+
 </configuration>

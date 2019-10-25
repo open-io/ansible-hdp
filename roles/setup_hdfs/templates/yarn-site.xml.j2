@@ -55,4 +55,19 @@
     <value>$HADOOP_CONF_DIR,/usr/hdp/${hdp.version}/hadoop-client/*,/usr/hdp/${hdp.version}/hadoop-client/lib/*,/usr/hdp/${hdp.version}/hadoop-hdfs-client/*,/usr/hdp/${hdp.version}/hadoop-hdfs-client/lib/*,/usr/hdp/${hdp.version}/hadoop-yarn-client/*,/usr/hdp/${hdp.version}/hadoop-yarn-client/lib/*</value>
     </property>
 
+    <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>{{ hadoop_yarn_scheduler_minimum_allocation_mb }}</value>
+    </property>
+
+    <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>{{ hadoop_yarn_scheduler_maximum_allocation_mb }}</value>
+    </property>
+
+    <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>{{ hadoop_yarn_nodemanager_resource_memory_mb }}</value>
+    </property>
+
 </configuration>

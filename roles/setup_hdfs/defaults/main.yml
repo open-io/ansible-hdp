@@ -31,6 +31,16 @@ hadoop_hdp_version: 2.6.3.0
 
 hadoop_hdfs_replication: 3
 
+hadoop_yarn_scheduler_minimum_allocation_mb: 2048
+hadoop_yarn_scheduler_maximum_allocation_mb: 26624
+hadoop_yarn_nodemanager_resource_memory_mb: 26624
+
+hadoop_mapreduce_map_memory_mb: 2048
+hadoop_mapreduce_map_java_opts: -Xmx1638m
+hadoop_mapreduce_reduce_memory_mb: 4096
+hadoop_mapreduce_reduce_java_opts: -Xmx3276m
+hadoop_yarn_app_mapreduce_am_resource_mb: 4096
+hadoop_yarn_app_mapreduce_am_command_opts: -Xmx3276m
 
 hadoop_sysctl_entries:
   # max receive socket buffer (bytes)
