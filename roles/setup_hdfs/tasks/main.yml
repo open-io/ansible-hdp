@@ -105,6 +105,7 @@
     dest: "{{ hadoop_conf_dir }}/{{ item }}"
   with_items:
     - hadoop-env.sh
+    - log4j.properties
 
 - name: Set sysctl tuning
   sysctl:
