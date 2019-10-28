@@ -10,4 +10,11 @@
 	<value>{{ hadoop_hdp_version }}</value>
 	</property>
 
+	{% if hadoop_fs_s3a_endpoint is defined %}
+	<property>
+	<name>fs.s3a.endpoint</name>
+	<value>{{ hadoop_fs_s3a_endpoint }}</value>
+	</property>
+	{% endif %}
+
 </configuration>
