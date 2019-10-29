@@ -1,6 +1,6 @@
 ---
-hadoop_yum_repository_url: http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.3.0
-hadoop_yum_repository_gpgkey_url: http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.3.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+hadoop_yum_repository_url: http://public-repo-1.hortonworks.com/HDP/centos7/3.x/updates/3.1.4.0
+hadoop_yum_repository_gpgkey_url: http://public-repo-1.hortonworks.com/HDP/centos7/3.x/updates/3.1.4.0/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 hadoop_yum_packages:
   - hadoop
   - hadoop-hdfs
@@ -27,7 +27,7 @@ hadoop_yarn_pid_dir: /var/run/hadoop/yarn
 hadoop_conf_dir: /etc/hadoop/conf
 
 # FIXME
-hadoop_hdp_version: 2.6.3.0
+hadoop_hdp_version: 3.1.4.0
 
 hadoop_hdfs_replication: 3
 
