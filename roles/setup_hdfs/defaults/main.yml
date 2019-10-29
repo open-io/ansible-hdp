@@ -39,6 +39,8 @@ hadoop_yarn_scheduler_minimum_allocation_mb: 2048
 hadoop_yarn_scheduler_maximum_allocation_mb: 26624
 hadoop_yarn_nodemanager_resource_memory_mb: 26624
 
+hadoop_mapreduce_map_speculative: false
+hadoop_mapreduce_reduce_speculative: false
 hadoop_mapreduce_task_io_sort_factor: 100
 hadoop_mapreduce_task_io_sort_mb: 1146
 hadoop_mapreduce_map_memory_mb: 2048
