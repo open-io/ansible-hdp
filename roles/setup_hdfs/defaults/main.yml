@@ -42,6 +42,12 @@ hadoop_mapreduce_reduce_java_opts: -Xmx3276m
 hadoop_yarn_app_mapreduce_am_resource_mb: 4096
 hadoop_yarn_app_mapreduce_am_command_opts: -Xmx3276m
 
+
+hadoop_core_site_custom: {}
+hadoop_hdfs_site_custom: {}
+hadoop_yarn_site_custom: {}
+hadoop_mapred_site_custom: {}
+
 hadoop_sysctl_entries:
   # max receive socket buffer (bytes)
   net.core.rmem_max: 268435456

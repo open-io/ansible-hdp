@@ -70,4 +70,11 @@
     <value>{{ hadoop_yarn_nodemanager_resource_memory_mb }}</value>
     </property>
 
+{% for key, value in hadoop_yarn_site_custom.items() %}
+    <property>
+    <name>{{ key }}</name>
+    <value>{{ value }}</value>
+    </property>
+{% endfor %}
+
 </configuration>

@@ -1,20 +1,27 @@
 <configuration>
 
     <property>
-	<name>fs.default.name</name>
-	<value>hdfs://{{ hadoop_hdfs_namenode_hostname }}:8020</value>
-	</property>
+    <name>fs.default.name</name>
+    <value>hdfs://{{ hadoop_hdfs_namenode_hostname }}:8020</value>
+    </property>
 
     <property>
-	<name>hdp.version</name>
-	<value>{{ hadoop_hdp_version }}</value>
-	</property>
+    <name>hdp.version</name>
+    <value>{{ hadoop_hdp_version }}</value>
+    </property>
 
-	{% if hadoop_fs_s3a_endpoint is defined %}
-	<property>
-	<name>fs.s3a.endpoint</name>
-	<value>{{ hadoop_fs_s3a_endpoint }}</value>
-	</property>
-	{% endif %}
+    {% if hadoop_fs_s3a_endpoint is defined %}
+    <property>
+    <name>fs.s3a.endpoint</name>
+    <value>{{ hadoop_fs_s3a_endpoint }}</value>
+    </property>
+    {% endif %}
+
+{% for key, value in hadoop_core_site_custom.items() %}
+    <property>
+    <name>{{ key }}</name>
+    <value>{{ value }}</value>
+    </property>
+{% endfor %}
 
 </configuration>

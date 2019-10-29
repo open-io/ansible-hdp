@@ -1,9 +1,9 @@
 <configuration>
 
     <property>
-	<name>mapreduce.jobhistory.address</name>
-	<value>{{ hadoop_yarn_resourcemanager_hostname }}:10020</value>
-	</property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>{{ hadoop_yarn_resourcemanager_hostname }}:10020</value>
+    </property>
 
     <property>
     <name>mapreduce.jobhistory.webapp.address</name>
@@ -65,5 +65,12 @@
     <name>yarn.app.mapreduce.am.command-opts</name>
     <value>{{ hadoop_yarn_app_mapreduce_am_command_opts }}</value>
     </property>
+
+{% for key, value in hadoop_mapred_site_custom.items() %}
+    <property>
+    <name>{{ key }}</name>
+    <value>{{ value }}</value>
+    </property>
+{% endfor %}
 
 </configuration>

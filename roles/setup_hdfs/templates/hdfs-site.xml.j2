@@ -45,4 +45,11 @@
 	<value>{{ hadoop_hdfs_replication }}</value>
 	</property>
 
+{% for key, value in hadoop_hdfs_site_custom.items() %}
+    <property>
+    <name>{{ key }}</name>
+    <value>{{ value }}</value>
+    </property>
+{% endfor %}
+
 </configuration>
