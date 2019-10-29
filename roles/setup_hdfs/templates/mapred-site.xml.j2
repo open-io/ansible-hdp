@@ -66,6 +66,16 @@
     <value>{{ hadoop_yarn_app_mapreduce_am_command_opts }}</value>
     </property>
 
+    <property>
+    <name>mapreduce.task.io.sort.factor</name>
+    <value>{{ hadoop_mapreduce_task_io_sort_factor }}</value>
+    </property>
+
+    <property>
+    <name>mapreduce.task.io.sort.mb</name>
+    <value>{{ hadoop_mapreduce_task_io_sort_mb }}</value>
+    </property>
+
 {% for key, value in hadoop_mapred_site_custom.items() %}
     <property>
     <name>{{ key }}</name>
