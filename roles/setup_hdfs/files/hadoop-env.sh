@@ -27,12 +27,11 @@
 export JAVA_HOME=/usr/java/default/
 export HADOOP_HOME_WARN_SUPPRESS=1
 
-# Hadoop Configuration Directory
-#TODO: if env var set that can cause problems
-export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-/etc/hadoop/conf}
+# Hadoop home directory
+export HADOOP_HOME=${HADOOP_HOME:-/usr/hdp/current/hadoop-client}
 
 # Path to jsvc required by secure HDP 2.0 datanode
-export JSVC_HOME=/usr/libexec/bigtop-utils
+export JSVC_HOME=/usr/lib/bigtop-utils
 
 # The maximum amount of heap to use, in MB. Default is 1000.
 export HADOOP_HEAPSIZE="1024"
@@ -57,7 +56,7 @@ export HADOOP_CLIENT_OPTS="-Xmx128m ${HADOOP_CLIENT_OPTS}"
 #HADOOP_JAVA_PLATFORM_OPTS="-XX:-UsePerfData ${HADOOP_JAVA_PLATFORM_OPTS}"
 
 # On secure datanodes, user to run the datanode as after dropping privileges
-export HADOOP_SECURE_DN_USER=hdfs
+export HDFS_DATANODE_SECURE_USER=${HDFS_DATANODE_SECURE_USER:-""}
 
 # Extra ssh options.  Empty by default.
 export HADOOP_SSH_OPTS="-o ConnectTimeout=5 -o SendEnv=HADOOP_CONF_DIR"
@@ -108,9 +107,10 @@ for jarFile in `ls /usr/share/java/*ojdbc* 2>/dev/null`
 do
   JAVA_JDBC_LIBS=${JAVA_JDBC_LIBS}:$jarFile
 done
-#Add libraries required by nodemanager
-MAPREDUCE_LIBS=/usr/lib/hadoop-mapreduce/*
-export HADOOP_CLASSPATH=${HADOOP_CLASSPATH}${JAVA_JDBC_LIBS}:${MAPREDUCE_LIBS}
+
+export HADOOP_CLASSPATH=${HADOOP_CLASSPATH}${JAVA_JDBC_LIBS}
 
 # Setting path to hdfs command line
-export HADOOP_LIBEXEC_DIR=/usr/lib/hadoop/libexec
+export HADOOP_LIBEXEC_DIR=/usr/hdp/current/hadoop-client/libexec
+
+export HADOOP_OPTS="-Dhdp.version=$HDP_VERSION $HADOOP_OPTS"
