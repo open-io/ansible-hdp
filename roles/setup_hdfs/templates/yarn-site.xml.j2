@@ -71,6 +71,16 @@
     </property>
 
     <property>
+    <name>yarn.scheduler.minimum-allocation-vcores</name>
+    <value>{{ hadoop_yarn_scheduler_minimum_allocation_vcores }}</value>
+    </property>
+
+    <property>
+    <name>yarn.scheduler.maximum-allocation-vcores</name>
+    <value>{{ hadoop_yarn_scheduler_maximum_allocation_vcores }}</value>
+    </property>
+
+    <property>
     <name>yarn.webapp.api-service.enable</name>
     <value>true</value>
     </property>

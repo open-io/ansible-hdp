@@ -32,6 +32,9 @@ hadoop_hdp_version: 3.1.4.0
 
 hadoop_hdfs_replication: 3
 
+hadoop_yarn_scheduler_minimum_allocation_vcores: 1
+hadoop_yarn_scheduler_maximum_allocation_vcores: 4
+
 hadoop_yarn_scheduler_minimum_allocation_mb: 2048
 hadoop_yarn_scheduler_maximum_allocation_mb: 26624
 hadoop_yarn_nodemanager_resource_memory_mb: 26624
