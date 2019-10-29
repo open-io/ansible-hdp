@@ -70,6 +70,16 @@
     <value>{{ hadoop_yarn_nodemanager_resource_memory_mb }}</value>
     </property>
 
+    <property>
+    <name>yarn.webapp.api-service.enable</name>
+    <value>true</value>
+    </property>
+
+    <property>
+    <name>yarn.webapp.ui2.enable</name>
+    <value>true</value>
+    </property>
+
 {% for key, value in hadoop_yarn_site_custom.items() %}
     <property>
     <name>{{ key }}</name>
