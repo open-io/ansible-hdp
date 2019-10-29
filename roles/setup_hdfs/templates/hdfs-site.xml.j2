@@ -7,7 +7,7 @@
 
 	<property>
 	<name>dfs.datanode.data.dir</name>
-	<value>{{ hadoop_hdfs_datanode_dir }}</value>
+	<value>{{ hadoop_hdfs_datanode_dir | join(',') }}</value>
 	</property>
 
 	<property>

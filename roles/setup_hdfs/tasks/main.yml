@@ -37,13 +37,14 @@
     group: hadoop
     mode: "0750"
 
-- name: Create hadoop hdfs datanode directory
+- name: Create hadoop hdfs datanode directories
   file:
-    path: "{{ hadoop_hdfs_datanode_dir }}"
+    path: "{{ item }}"
     state: directory
     owner: hdfs
     group: hadoop
     mode: "0755"
+  with_items: "{{ hadoop_hdfs_datanode_dir }}"
 
 - name: Create hadoop yarn local directory
   file:
