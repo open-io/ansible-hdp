@@ -85,9 +85,6 @@ export HADOOP_SECURE_LOG_DIR=${HADOOP_SECURE_LOG_DIR:-/var/log/hadoop/$HDFS_DATA
 export HADOOP_PID_DIR=/var/run/hadoop/$USER
 export HADOOP_SECURE_PID_DIR=${HADOOP_SECURE_PID_DIR:-/var/run/hadoop/$HDFS_DATANODE_SECURE_USER}
 
-# History server pid
-export HADOOP_MAPRED_PID_DIR=/var/run/hadoop-mapreduce/$USER
-
 # A string representing this instance of hadoop. $USER by default.
 export HADOOP_IDENT_STRING=$USER
 
