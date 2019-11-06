@@ -94,6 +94,14 @@
       group: hadoop
       mode: "0755"
 
+- name: Create hadoop mapred pid dir
+  file:
+      path: "{{ hadoop_mapred_pid_dir }}"
+      state: directory
+      owner: mapred
+      group: hadoop
+      mode: "0755"
+
 - name: Create hadoop configuration dir
   file:
     path: "{{ hadoop_conf_dir }}"
