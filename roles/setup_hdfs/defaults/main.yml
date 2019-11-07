@@ -19,6 +19,8 @@ hadoop_hdfs_datanode_dir:
 hadoop_hdfs_datanode_address: "0.0.0.0:9866"
 hadoop_hdfs_datanode_dns_interface: default
 hadoop_hdfs_datanode_hostname: ''
+hadoop_hdfs_client_use_datanode_hostname: false
+hadoop_hdfs_datanode_use_datanode_hostname: false
 hadoop_hdfs_log_dir: /var/log/hadoop/hdfs
 hadoop_hdfs_pid_dir: /var/run/hadoop/hdfs
 
