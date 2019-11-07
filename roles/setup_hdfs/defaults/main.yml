@@ -17,6 +17,7 @@ hadoop_hdfs_secondary_namenode_dir: "{{ hadoop_hdfs_base_dir }}/snn"
 hadoop_hdfs_datanode_dir:
   - "{{ hadoop_hdfs_base_dir }}/dn"
 hadoop_hdfs_datanode_address: "0.0.0.0:9866"
+hadoop_hdfs_datanode_dns_interface: default
 hadoop_hdfs_log_dir: /var/log/hadoop/hdfs
 hadoop_hdfs_pid_dir: /var/run/hadoop/hdfs
 
