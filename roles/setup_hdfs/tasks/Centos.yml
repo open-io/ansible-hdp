@@ -1,0 +1,11 @@
+---
+- name: Configure hadoop repository
+  yum_repository:
+    name: hdp
+    description: HDP repository
+    baseurl: "{{ hadoop_yum_repository_url }}"
+    gpgkey: "{{ hadoop_yum_repository_gpgkey_url }}"
+
+- name: Install hadoop packages
+  yum:
+    name: "{{ hadoop_yum_packages }}"

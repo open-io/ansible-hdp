@@ -11,6 +11,18 @@ hadoop_yum_packages:
   - openssl
   - java-1.8.0-openjdk-headless
 
+hadoop_apt_repository: "deb http://public-repo-1.hortonworks.com/HDP/ubuntu18/3.x/updates/3.1.4.0 HDP main"
+hadoop_apt_repository_key_id: "B9733A7A07513CAD"
+hadoop_apt_packages:
+  - hadoop
+  - hadoop-hdfs
+  - hadoop-libhdfs
+  - hadoop-yarn
+  - hadoop-mapreduce
+  - hadoop-client
+  - openssl
+  - openjdk-8-jdk-headless
+
 hadoop_hdfs_base_dir: /hadoop/hdfs
 hadoop_hdfs_namenode_dir: "{{ hadoop_hdfs_base_dir }}/nn"
 hadoop_hdfs_secondary_namenode_dir: "{{ hadoop_hdfs_base_dir }}/snn"

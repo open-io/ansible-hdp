@@ -1,0 +1,14 @@
+---
+- name: Configure hadoop apt repository key
+  apt_key:
+    id: "{{ hadoop_apt_repository_key_id }}"
+    keyserver: keyserver.ubuntu.com
+
+- name: Configure hadoop apt repository
+  apt_repository:
+    repo: "{{ hadoop_apt_repository }}"
+    update_cache: true
+
+- name: Install hadoop apt packages
+  apt:
+    name: "{{ hadoop_apt_packages }}"

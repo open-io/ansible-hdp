@@ -1,14 +1,9 @@
 ---
-- name: Configure hadoop repository
-  yum_repository:
-    name: hdp
-    description: HDP repository
-    baseurl: "{{ hadoop_yum_repository_url }}"
-    gpgkey: "{{ hadoop_yum_repository_gpgkey_url }}"
-
-- name: Install hadoop packages
-  yum:
-    name: "{{ hadoop_yum_packages }}"
+- name: "Include {{ ansible_distribution }}} variables"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
 
 - name: Create /usr/java directory
   file:
