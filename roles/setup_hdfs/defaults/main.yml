@@ -16,7 +16,7 @@ hadoop_apt_repository_key_id: "B9733A7A07513CAD"
 hadoop_apt_packages:
   - hadoop
   - hadoop-hdfs
-  - hadoop-libhdfs
+  - libhdfs0
   - hadoop-yarn
   - hadoop-mapreduce
   - hadoop-client
