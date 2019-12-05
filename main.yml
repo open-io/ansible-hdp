@@ -1,5 +1,4 @@
 ---
 - hosts: hdfs
-  gather_facts: false
   roles:
     - setup_hdfs
