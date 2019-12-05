@@ -12,3 +12,14 @@
 - name: Install hadoop apt packages
   apt:
     name: "{{ hadoop_apt_packages }}"
+
+- name: Create /usr/java directory
+  file:
+    path: /usr/java
+    state: directory
+
+- name: Configure java default symlink
+  file:
+    path: /usr/java/default
+    src: /usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+    state: link

@@ -5,17 +5,6 @@
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
 
-- name: Create /usr/java directory
-  file:
-    path: /usr/java
-    state: directory
-
-- name: Configure java default symlink
-  file:
-    path: /usr/java/default
-    src: /usr/lib/jvm/jre
-    state: link
-
 - name: Create hadoop hdfs namenode directory
   file:
     path: "{{ hadoop_hdfs_namenode_dir }}"
