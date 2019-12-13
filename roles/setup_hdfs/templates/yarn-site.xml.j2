@@ -75,9 +75,15 @@
     <value>{{ hadoop_yarn_nodemanager_resource_memory_mb }}</value>
     </property>
 
+
+    <property>
+    <name>yarn.nodemanager.hostname</name>
+    <value>{{ hadoop_yarn_nodemanager_hostname }}</value>
+    </property>
+
     <property>
     <name>yarn.nodemanager.address</name>
-    <value>0.0.0.0:32960</value>
+    <value>{{ hadoop_yarn_nodemanager_hostname }}:32960</value>
     </property>
 
     <property>

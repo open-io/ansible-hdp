@@ -36,6 +36,7 @@ hadoop_hdfs_datanode_use_datanode_hostname: false
 hadoop_hdfs_log_dir: /var/log/hadoop/hdfs
 hadoop_hdfs_pid_dir: /var/run/hadoop/hdfs
 
+hadoop_yarn_nodemanager_hostname: '0.0.0.0'
 hadoop_yarn_base_dir: /hadoop/yarn
 hadoop_yarn_local_dir: "{{ hadoop_yarn_base_dir }}/local"
 hadoop_yarn_local_log_dir: "{{ hadoop_hdfs_base_dir }}/logs"
