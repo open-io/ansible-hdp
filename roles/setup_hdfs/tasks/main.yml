@@ -27,7 +27,7 @@
     state: directory
     owner: hdfs
     group: hadoop
-    mode: "0755"
+    mode: "0700"
   with_items: "{{ hadoop_hdfs_datanode_dir }}"
 
 - name: Create hadoop yarn local directory
