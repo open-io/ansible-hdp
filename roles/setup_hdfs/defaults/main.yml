@@ -73,6 +73,33 @@ hadoop_mapreduce_reduce_java_opts: -Xmx3276m
 hadoop_yarn_app_mapreduce_am_resource_mb: 4096
 hadoop_yarn_app_mapreduce_am_command_opts: -Xmx3276m
 
+#
+# S3A configuration
+#
+hadoop_fs_s3a_access_key: ''
+hadoop_fs_s3a_secret_key: ''
+hadoop_fs_s3a_endpoint: ''
+hadoop_fs_s3a_path_style_access: true
+hadoop_fs_s3a_fast_upload: true
+hadoop_fs_s3a_block_size: '512M'
+hadoop_fs_s3a_multipart_threshold: '512M'
+hadoop_fs_s3a_multipart_size: '512M'
+hadoop_fs_s3a_fast_upload_buffer: 'disk'
+hadoop_fs_s3a_buffer_dir: '${hadoop.tmp.dir}/s3a/'
+hadoop_fs_s3a_threads.max: 2048
+hadoop_fs_s3a_fast_upload_active_blocks: 2048
+hadoop_fs_s3a_connection_maximum: 8192
+hadoop_fs_s3a_max_total_tasks: 2048
+hadoop_fs_s3a_socket_recv_buffer: 65536
+hadoop_fs_s3a_socket_send_buffer: 65536
+hadoop_fs_s3a_committer_magic_enabled: false
+hadoop_fs_s3a.committer_name: directory
+hadoop_fs_s3a_committer_staging_abort_pending_uploads: true
+hadoop_fs_s3a_committer_staging_conflict_mode: append
+hadoop_fs_s3a_committer_staging_tmp_path: /tmp/staging/
+hadoop_fs_s3a_committer_staging_unique_filenames: true
+hadoop_fs_s3a_committer_threads: 2048
+
 
 hadoop_core_site_custom: {}
 hadoop_hdfs_site_custom: {}

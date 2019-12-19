@@ -10,12 +10,120 @@
     <value>{{ hadoop_hdp_version }}</value>
     </property>
 
-    {% if hadoop_fs_s3a_endpoint is defined %}
+    <property>
+    <name>fs.s3a.access.key</name>
+    <value>{{ hadoop_fs_s3a_access_key }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.secret.key</name>
+    <value>{{ hadoop_fs_s3a_secret_key }}</value>
+    </property>
+
     <property>
     <name>fs.s3a.endpoint</name>
     <value>{{ hadoop_fs_s3a_endpoint }}</value>
     </property>
-    {% endif %}
+
+    <property>
+    <name>fs.s3a.path.style.access</name>
+    <value>{{ hadoop_fs_s3a_path_style_access }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.fast.upload</name>
+    <value>{{ hadoop_fs_s3a_fast_upload }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.block.size</name>
+    <value>{{ hadoop_fs_s3a_block_size }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.multipart.threshold</name>
+    <value>{{ hadoop_fs_s3a_multipart_threshold }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.multipart.size</name>
+    <value>{{ hadoop_fs_s3a_multipart_size }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.fast.upload.buffer</name>
+    <value>{{ hadoop_fs_s3a_fast_upload_buffer }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.buffer.dir</name>
+    <value>{{ hadoop_fs_s3a_buffer_dir }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.threads.max</name>
+    <value>{{ hadoop_fs_s3a_threads_max }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.fast.upload.active.blocks</name>
+    <value>{{ hadoop_fs_s3a_fast_upload_active_blocks }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.connection.maximum</name>
+    <value>{{ hadoop_fs_s3a_connection_maximum }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.max.total.tasks</name>
+    <value>{{ hadoop_fs_s3a_max_total_tasks }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.socket.recv.buffer</name>
+    <value>{{ hadoop_fs_s3a_socket_recv_buffer }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.socket.send.buffer</name>
+    <value>{{ hadoop_fs_s3a_socket_send_buffer }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.magic.enabled</name>
+    <value>{{ hadoop_fs_s3a_committer_magic_enabled }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.name</name>
+    <value>{{ hadoop_fs_s3a_committer_name }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.staging.abort.pending.uploads</name>
+    <value>{{ hadoop_fs_s3a_committer_staging_abort_pending_uploads }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.staging.conflict-mode</name>
+    <value>{{ hadoop_fs_s3a_committer_staging_conflict_mode }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.staging.tmp.path</name>
+    <value>{{ hadoop_fs_s3a_committer_staging_tmp_path }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.staging.unique-filenames</name>
+    <value>{{ hadoop_fs_s3a_committer_staging_unique_filenames }}</value>
+    </property>
+
+    <property>
+    <name>fs.s3a.committer.threads</name>
+    <value>{{ hadoop_fs_s3a_committer_threads }}</value>
+    </property>
 
 {% for key, value in hadoop_core_site_custom.items() %}
     <property>
