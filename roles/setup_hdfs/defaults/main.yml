@@ -86,7 +86,7 @@ hadoop_fs_s3a_multipart_threshold: '512M'
 hadoop_fs_s3a_multipart_size: '512M'
 hadoop_fs_s3a_fast_upload_buffer: 'disk'
 hadoop_fs_s3a_buffer_dir: '${hadoop.tmp.dir}/s3a/'
-hadoop_fs_s3a_threads.max: 2048
+hadoop_fs_s3a_threads_max: 2048
 hadoop_fs_s3a_fast_upload_active_blocks: 2048
 hadoop_fs_s3a_connection_maximum: 8192
 hadoop_fs_s3a_max_total_tasks: 2048
