@@ -93,7 +93,7 @@ hadoop_fs_s3a_max_total_tasks: 2048
 hadoop_fs_s3a_socket_recv_buffer: 65536
 hadoop_fs_s3a_socket_send_buffer: 65536
 hadoop_fs_s3a_committer_magic_enabled: false
-hadoop_fs_s3a.committer_name: directory
+hadoop_fs_s3a_committer_name: directory
 hadoop_fs_s3a_committer_staging_abort_pending_uploads: true
 hadoop_fs_s3a_committer_staging_conflict_mode: append
 hadoop_fs_s3a_committer_staging_tmp_path: /tmp/staging/
