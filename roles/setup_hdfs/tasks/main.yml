@@ -129,8 +129,9 @@
   with_dict: "{{ hadoop_sysctl_entries }}"
 
 - name: Add prepare script
-  file:
-    path: /var/lib/hadoop-hdfs/prepare.sh
+  copy:
+    src: prepare.sh
+    dest: /var/lib/hadoop-hdfs/prepare.sh
 
 - name: Create directories in HDFS
   command: /var/lib/hadoop-hdfs/prepare.sh
