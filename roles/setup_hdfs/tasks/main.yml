@@ -132,6 +132,7 @@
   copy:
     src: prepare.sh
     dest: /var/lib/hadoop-hdfs/prepare.sh
+    mode: 0755
 
 - name: Create directories in HDFS
   command: /var/lib/hadoop-hdfs/prepare.sh
