@@ -164,4 +164,13 @@
 - name: Create directories in HDFS
   command: /var/lib/hadoop-hdfs/prepare.sh
   become_user: hdfs
-  run_once: true
+  when: "ansible_hostname == hadoop_master"
+
+- name: Restart YARN resourcemanager
+  command: /var/lib/hadoop-yarn/restart_yarn_resourcemanager.sh
+  become_user: yarn
+  when: "ansible_hostname == hadoop_master"
+
+- name: Restart HDFS nodemanager
+  command: /var/lib/hadoop-hdfs/restart_yarn_nodemanager.sh
+  become_user: hdfs
