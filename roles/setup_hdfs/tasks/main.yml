@@ -128,6 +128,24 @@
     value: "{{ item.value }}"
   with_dict: "{{ hadoop_sysctl_entries }}"
 
+- name: Add HDFS restart scripts
+  copy:
+    src: "{{ item }}"
+    dest: "/var/lib/hadoop-hdfs/{{ item }}"
+    mode: 0755
+  with_items:
+    - restart_hdfs_datanode.sh
+    - restart_hdfs_namenode.sh
+
+- name: Add YARN restart scripts
+  copy:
+    src: "{{ item }}"
+    dest: "/var/lib/hadoop-yarn/{{ item }}"
+    mode: 0755
+  with_items:
+    - restart_yarn_resourcemanager.sh
+    - restart_yarn_nodemanager.sh
+
 - name: Add prepare script
   copy:
     src: prepare.sh
