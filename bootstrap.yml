@@ -3,9 +3,17 @@
   become: true
   become_user: hdfs
   tasks:
+    - name: Check if namenode was formatted
+      stat: path=/var/lib/hadoop-hdfs/namenode_format
+      register: namenode
+
     - name: Format HDFS namenode
       command: hdfs namenode -format
-      when: "ansible_hostname == hadoop_master"
+      when: "ansible_hostname == hadoop_master and namenode.stat.exists == False"
+
+    - name: "Add marker"
+      file: path=/var/lib/hadoop-hdfs/namenode_format state=touch
+      when: "ansible_hostname == hadoop_master and namenode.stat.exists == False"
 
     - name: Restart HDFS namenode
       command: /var/lib/hadoop-hdfs/restart_hdfs_namenode.sh
