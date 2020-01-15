@@ -6,6 +6,7 @@
     - name: Check if namenode was formatted
       stat: path=/var/lib/hadoop-hdfs/namenode_format
       register: namenode
+      when: "ansible_hostname == hadoop_master"
 
     - name: Format HDFS namenode
       command: hdfs namenode -format -nonInteractive
@@ -16,11 +17,11 @@
       when: "ansible_hostname == hadoop_master and namenode.stat.exists == False"
 
     - name: Restart HDFS namenode
-      command: /var/lib/hadoop-hdfs/restart_hdfs_namenode.sh
+      command: nohup /var/lib/hadoop-hdfs/restart_hdfs_namenode.sh
       when: "ansible_hostname == hadoop_master"
 
     - name: Restart HDFS datanodes
-      command: /var/lib/hadoop-hdfs/restart_hdfs_datanode.sh
+      command: nohup /var/lib/hadoop-hdfs/restart_hdfs_datanode.sh
 
     - name: Create directories in HDFS
       command: /var/lib/hadoop-hdfs/prepare.sh
