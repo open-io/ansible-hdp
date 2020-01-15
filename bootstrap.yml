@@ -1,0 +1,30 @@
+---
+- hosts: hdfs
+  become: true
+  become_user: hdfs
+  tasks:
+    - name: Format HDFS namenode
+      command: hdfs namenode -format
+      when: "ansible_hostname == hadoop_master"
+
+    - name: Restart HDFS namenode
+      command: /var/lib/hadoop-hdfs/restart_hdfs_namenode.sh
+      when: "ansible_hostname == hadoop_master"
+
+    - name: Restart HDFS datanodes
+      command: /var/lib/hadoop-hdfs/restart_hdfs_datanode.sh
+
+    - name: Create directories in HDFS
+      command: /var/lib/hadoop-hdfs/prepare.sh
+      when: "ansible_hostname == hadoop_master"
+
+- hosts: hdfs
+  become: true
+  become_user: yarn
+  tasks:
+    - name: Restart YARN resourcemanager
+      command: /var/lib/hadoop-yarn/restart_yarn_resourcemanager.sh
+      when: "ansible_hostname == hadoop_master"
+
+    - name: Restart YARN nodemanager
+      command: /var/lib/hadoop-yarn/restart_yarn_nodemanager.sh
