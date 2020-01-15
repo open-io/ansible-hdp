@@ -8,7 +8,7 @@
       register: namenode
 
     - name: Format HDFS namenode
-      command: hdfs namenode -format
+      command: hdfs namenode -format -nonInteractive
       when: "ansible_hostname == hadoop_master and namenode.stat.exists == False"
 
     - name: "Add marker"
