@@ -1,5 +1,5 @@
 ---
-- name: "Include {{ ansible_distribution }}} variables"
+- name: "Include {{ ansible_distribution }} variables"
   include_tasks: "{{ item }}"
   with_first_found:
     - "{{ ansible_distribution }}.yml"
