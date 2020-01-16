@@ -32,8 +32,8 @@
   become_user: yarn
   tasks:
     - name: Restart YARN resourcemanager
-      command: /var/lib/hadoop-yarn/restart_yarn_resourcemanager.sh
+      command: nohup /var/lib/hadoop-yarn/restart_yarn_resourcemanager.sh
       when: "ansible_hostname == hadoop_master"
 
     - name: Restart YARN nodemanager
-      command: /var/lib/hadoop-yarn/restart_yarn_nodemanager.sh
+      command: nohup /var/lib/hadoop-yarn/restart_yarn_nodemanager.sh
