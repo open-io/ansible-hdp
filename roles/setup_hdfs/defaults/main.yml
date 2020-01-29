@@ -61,6 +61,7 @@ hadoop_yarn_scheduler_maximum_allocation_mb: 26624
 hadoop_yarn_nodemanager_resource_memory_mb: 26624
 hadoop_yarn_nodemanager_vmem_check_enabled: false
 hadoop_yarn_nodemanager_vmem_pmem_ratio: 2.1
+hadoop_yarn_nodemanager_resource_cpu_vcores: -1
 
 hadoop_mapreduce_map_speculative: false
 hadoop_mapreduce_reduce_speculative: false
